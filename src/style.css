@@ -1,0 +1,205 @@
+:root {
+  font-family: 'Outfit', sans-serif;
+  background-color: #030712;
+  color: #f3f4f6;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(180deg, rgba(79, 70, 229, 0.15) 0%, rgba(147, 51, 234, 0.15) 100%);
+  filter: blur(80px);
+  border-radius: 50%;
+  z-index: -1;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.app-container {
+  width: 100%;
+  max-width: 440px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.pass-card {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+  margin-bottom: 2rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.card-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem 0;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.card-header p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #d1d5db;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  background: rgba(3, 7, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.input-box:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.input-box input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  padding: 0.95rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.input-box input::placeholder {
+  color: #4b5563;
+}
+
+#toggle-btn {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  padding: 0 1rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+#toggle-btn:hover {
+  color: #ffffff;
+}
+
+.strength-container {
+  background: rgba(3, 7, 18, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 1.1rem;
+  border-radius: 14px;
+  margin-bottom: 1.75rem;
+}
+
+.bar-container {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s ease;
+  border-radius: 3px;
+}
+
+.bar-weak { background-color: #f87171; box-shadow: 0 0 10px rgba(248, 113, 113, 0.4); }
+.bar-medium { background-color: #fbbf24; box-shadow: 0 0 10px rgba(251, 191, 36, 0.4); }
+.bar-strong { background-color: #34d399; box-shadow: 0 0 10px rgba(52, 211, 153, 0.4); }
+
+.strength-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+#security-level {
+  font-weight: 600;
+}
+
+#security-level.weak { color: #f87171; }
+#security-level.medium { color: #fbbf24; }
+#security-level.strong { color: #34d399; }
+
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px -5px rgba(99, 102, 241, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
